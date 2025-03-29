@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "Outfit";
+  src: url("fonts/Outfit-VariableFont_wght.woff") format("woff");
+  /* font-weight: 100 900; 假设支持从100到900的字重 */
+}
+@font-face {
+  font-family: "Outfit-Bold";
+  src: url("fonts/Outfit-ExtraBold.woff") format("woff");
+  /* font-weight: 100 900; 假设支持从100到900的字重 */
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+html {
+  /* 62.5% of 16px = 10px */
+  font-size: 62.5%;
+}
+
+html,
+body {
+  align-items: center;
+  background-color: #d5e1ef;
+  display: flex;
+  flex-direction: column;
+  flex: 1 auto;
+  height: 100%;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  align-items: center; /* 水平居中（如果需要） */
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column; /* 垂直堆叠子元素 */
+  font-size: 1.4rem;
+  height: 49.9rem;
+  letter-spacing: 0;
+  line-height: 120%;
+  margin-top: 2rem;
+  padding: 1.6rem;
+  width: 32rem;
+}
+.container--flex--column {
+  align-items: center; /* 水平居中（如果需要） */
+  display: flex;
+  flex-direction: column; /* 垂直堆叠子元素 */
+  justify-content: space-between; /* 子元素之间的间距相等 */
+}
+.container--img {
+  border-radius: 10px;
+  height: 28.8rem;
+  width: 28.8rem;
+}
+.container--textfield {
+  height: 13.1rem;
+  width: 28.8rem;
+}
+.container--heading {
+  color: #1f314f;
+  font-family: Outfit-Bold;
+  line-height: 2rem;
+  padding: 0 1.6rem;
+  text-align: center;
+}
+
+.container--text {
+  color: #68778d;
+  font-family: Outfit;
+  font-size: 1.5rem;
+  margin-top: 0;
+  padding: 0 1.6rem;
+  text-align: center;
+}
