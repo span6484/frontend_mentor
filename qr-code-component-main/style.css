@@ -20,28 +20,28 @@ html {
 
 html,
 body {
-  align-items: center;
   background-color: #d5e1ef;
-  display: flex;
-  flex-direction: column;
-  flex: 1 auto;
-  height: 100%;
-  justify-content: center;
+  height: 100vh;
   margin: 0;
   padding: 0;
 }
-
-.container {
+.main {
   align-items: center; /* 水平居中（如果需要） */
+  display: flex;
+  flex-direction: column; /* 垂直堆叠子元素 */
+  height: 100vh;
+  justify-content: center; /* 垂直居中 */
+  width: 100vw;
+}
+.container {
+  display: flex;
   background-color: #fff;
   border-radius: 20px;
-  display: flex;
   flex-direction: column; /* 垂直堆叠子元素 */
   font-size: 1.4rem;
   height: 49.9rem;
   letter-spacing: 0;
   line-height: 120%;
-  margin-top: 2rem;
   padding: 1.6rem;
   width: 32rem;
 }
