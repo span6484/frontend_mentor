@@ -144,7 +144,6 @@ html body {
   border-radius: var(--radius-s);
   transition: all 0.9s ease;
   text-decoration: none;
-  cursor: pointer; /* 手型光标 */
 }
 
 @media screen and (max-width: 600px) {
