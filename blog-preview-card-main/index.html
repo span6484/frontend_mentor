@@ -2,70 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/images/favicon-32x32.png"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Frontend Mentor | Blog preview card</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <title>Grid Layout Test</title>
     <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
+      #field {
+        width: 100%;
+        height: 100vh; /* 设置高度为视口高度，确保容器可见 */
+        background-color: red;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 15px;
+        grid-template-areas:
+          "a a a b"
+          "a a a b"
+          "a a a b"
+          "b b b b";
       }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
+
+      #redLand {
+        background-color: yellow;
+        grid-area: a;
+        min-height: 50px; /* 或根据需要设置适当的高度 */
       }
     </style>
   </head>
   <body>
-    <div class="attribution text-Preset1">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by
-      <a href="https://www.linkedin.com/in/aiden-p-05356b192/"
-        >Shaoqiu Pan, Welcome to connect me on linkedin</a
-      >.
+    <div id="field">
+      <div id="redLand">xxx</div>
+      <!-- Red Land -->
     </div>
-    <main class="main">
-      <section class="container">
-        <div class="card">
-          <img
-            src="assets/images/illustration-article.svg"
-            alt=""
-            class="card--image"
-          />
-          <div class="card--content card__margin-24">
-            <h3 class="card--category text-Preset3__Bold">Learning</h3>
-            <div class="card--date card__margin-12 text-Preset3">
-              Published 21 Dec 2023
-            </div>
-            <a class="card--title card__margin-12 text-Preset1" href="#">
-              HTML & CSS foundations
-            </a>
-            <p class="card--details text-Preset2">
-              These languages are the backbone of every website, defining
-              structure, content, and presentation.
-            </p>
-          </div>
-          <div class="card--author">
-            <img
-              src="assets/images/image-avatar.webp"
-              alt=""
-              class="card--author--avatar"
-            />
-            <h3 class="card--author--name text-Preset3__Bold">Greg Hooper</h3>
-          </div>
-        </div>
-      </section>
-    </main>
   </body>
 </html>
