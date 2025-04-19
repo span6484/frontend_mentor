@@ -1,0 +1,129 @@
+:root {
+  /* color */
+  --background-color: #f3e5d8;
+  --card_background-color: white;
+  --prep-color: #fff7fc;
+  --primary-color: hsl(14, 45%, 36%);
+  --secondary-color: hsl(30, 10%, 34%);
+  --third-color: hsl(332, 51%, 32%);
+  /* padding */
+  --space-xxs: 0.1rem;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+
+  /* font-weight */
+  --fw-s: 4;
+  --fw-m: 6;
+  --fw-l: 8;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  font-family: "Young Serif", serif;
+  font-weight: var(--fw-s);
+  color: var(--secondary-color);
+}
+.recipe-card {
+  width: min(80%, 50rem);
+  margin: 10rem auto;
+  background-color: var(--card_background-color);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
+  gap: var(--space-md);
+  border-radius: var(--space-md);
+}
+img {
+  object-fit: cover;
+  max-width: 100%;
+  border-radius: 1rem;
+}
+
+/* 适用于所有列表 */
+ul,
+ol {
+  list-style: none; /* 关掉浏览器默认 • 或数字 */
+  padding-inline-start: 0; /* 不要任何默认缩进 */
+  margin: var(--space-md) 0; /* 列表自身的上下间距 */
+}
+.recipe-card__prep-time {
+  background-color: var(--prep-color);
+  padding: var(--space-lg);
+}
+h2,
+h3,
+ul,
+li {
+  margin: var(--space-md) 0;
+}
+h2 {
+  color: var(--primary-color);
+}
+h3 {
+  color: var(--third-color);
+}
+/* 先在 ol 上初始化计数器（for 有序列表） */
+ol {
+  counter-reset: li-counter;
+}
+
+/* li 统一样式 */
+li {
+  position: relative; /* 为 ::before 定位做准备 */
+  margin: var(--space-md) 0; /* 段前/段后间距 */
+  padding-inline-start: var(--space-lg); /* 正文距离容器左边 30px */
+  line-height: 1.5; /*（可选）让多行文本对齐更优 */
+}
+/* 无序列表 • */
+ul li::before {
+  content: "•"; /* 你喜欢的符号也可以换成 "–"、"►" 等 */
+  position: absolute;
+  left: 0; /* 紧贴容器左边 */
+  top: 0.1em; /* 根据字体调整垂直对齐 */
+  /* 下面这行是真正拉开标记与文字间距的关键 */
+  margin-right: var(--space-xxs); /* 标点与正文之间 10px 空隙 */
+  font-size: 1em;
+  line-height: 1;
+  color: var(--primary-color);
+}
+
+/* 有序列表 1. 2. 3. */
+ol li {
+  counter-increment: li-counter;
+}
+ol li::before {
+  content: counter(li-counter) "."; /* 自动生成数字 + “.” */
+  position: absolute;
+  color: var(--primary-color);
+  left: 0;
+  top: 0;
+  margin-right: --space-xxs; /* 数字与正文之间 10px 空隙 */
+  font-size: 1em;
+  line-height: 1;
+  /* 如果想让数字都右对齐，可以加： */
+  /* width: 2ch; text-align: right; flex-shrink: 0; */
+}
+
+.label {
+  font-weight: bold;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  border-bottom: 1px solid black;
+}
